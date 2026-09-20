@@ -6,7 +6,7 @@ Többsávos podcast-videószerkesztő
 
 A brief értelmezése
 A projekt célja, hogy egy többsávos podcast és videószerkesztő alkalmazást hozzak létre. Ebben az alkalmazásban a hangfájlokat és videófájlokat lehetne szinkronizálni résztvevőkhöz, 
-kivágni a nem kívánt részeket és egy előnézetet készítene, ami könnyítené a munkánkat.
+kivágni a nem kívánt részeket és egy előnézetet létrehozna, ami könnyítené a munkánkat.
 
 Miért én lennék alkalmas erre a projektre?
 A videószerkesztés évek óta a személyes hobbim felhasználói oldalról, amit nagyon szeretek csinálni. Emiatt kifejezetten érdekel, hogy azok a vágóprogramok, 
