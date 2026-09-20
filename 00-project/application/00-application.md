@@ -24,11 +24,8 @@ Mivel a renderelésnek a kliens gépén kell történnie, a háttérben FFmpeg-e
 A projektek adatait és a bejelentkezést egy egyszerű Node.js backenddel és egy relációs adatbázissal (pl. PostgreSQL vagy SQLite) kezelem, a kódot pedig Gitben vezetem.
 
 Kezdeti terv
-1. Az Electron + TypeScript + React asztali környezet és a Git repó felállítása.
-2. A médiafájlok betöltésének, a résztvevőkhöz rendelésnek és a közös nullpontos szinkronizációnak a kidolgozása.
-3. A többsávos idővonal (timeline) felületének megépítése a klipek vágásához és mozgatásához.
-4. Az előnézeti motor megvalósítása (a kiválasztott sávok valós idejű megjelenítése, hangerőkezelés, pan–zoom).
-5. A helyi exportálási folyamat kialakítása FFmpeg segítségével (kész videó és külön audió kimenet).
-6. A Node.js backend és az adatbázis elkészítése a felhasználók és a projektállapotok perzisztens tárolásához.
-7. Hibakezelés implementálása (hibás vagy nem támogatott médiafájlok és meghiúsult renderelés lekezelése).
-8. Tesztelés, kódátnézés és a dokumentáció elkészítése.
+1. A kliensoldali médiafeldolgozási lehetőségek feltérképezése (böngészős API-k vs. Electron/FFmpeg összehasonlítása).
+2. Az idővonal és a szerkesztési döntések adatmodelljének megtervezése (szinkron, vágások, hangsávok, pan–zoom leírása).
+3. Egy kezdeti Electron + React keretrendszer felállítása és az alap felület kialakítása.
+4. Egyszerűbb prototípus készítése a médiafájlok betöltésére és a nullpontos szinkronizáció tesztelésére.
+5. A backend és az adatbázis-struktúra megtervezése a projektadatok mentéséhez.
