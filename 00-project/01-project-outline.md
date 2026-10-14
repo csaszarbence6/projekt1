@@ -4,7 +4,7 @@ name: "Császár Bence"
 neptun: "WD7TOP"
 id: "2026-LG-01"
 github: "https://github.com/csaszarbence6/projekt1"
-github_project: "[GITHUB PROJECT TÁBLA LINKJE]"
+github_project: "https://github.com/users/csaszarbence6/projects/1"
 ---
 
 # Többsávos podcast-videószerkesztő
