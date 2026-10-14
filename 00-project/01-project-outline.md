@@ -2,50 +2,45 @@
 ---
 name: "Császár Bence"
 neptun: "WD7TOP"
-id: 2026-LG-01
+id: "2026-LG-01"
 github: "https://github.com/csaszarbence6/projekt1"
-github_project: ""
+github_project: "[GITHUB PROJECT TÁBLA LINKJE]"
 ---
 
 # Többsávos podcast-videószerkesztő
 
-A podcastfelvételek gyakran különálló hang- és videóforrásokból állnak. Egy videóforrás saját hangsávot is tartalmazhat, ezért a végső produkcióban külön kell meghatározni, hogy az egyes időszakokban melyik résztvevő hangja hallható és melyik videója látható. A projekt célja egy asztali többsávos podcast-videószerkesztő készítése, amely szinkronizált forrásfelvételekből állít elő videó- vagy csak hangot tartalmazó kimenetet.
-
-A felhasználó a forrásokat résztvevőkhöz rendeli, közös idővonalon szinkronizálja, megadja a kivágandó részeket, majd meghatározza az egyes időszakokban aktív hang- és videósávokat. Az alkalmazás előnézetet biztosít, a projekt- és szerkesztési adatokat tartósan tárolja, a renderelést pedig a felhasználó saját eszközén végzi.
+A projekt lényege egy olyan asztali alkalmazás készítése, amellyel több külön rögzített hang- és videóforrásból lehet podcastot összeállítani. A forrásokat közös idővonalra kell igazítani, majd megadni, hogy az egyes részekben melyik hang hallatszódjon, és melyik videó jelenjen meg. A cél nem egy általános videóvágó készítése, hanem a többszereplős podcastok szerkesztésének egyszerűsítése.
 
 ## Célok
 
-- **Elsődleges cél:** Olyan működő asztali alkalmazás készítése, amellyel több hang- és videóforrásból podcast állítható össze, majd helyben exportálható.
-- **Célfelhasználók / érintettek:** Podcastkészítők, akik külön rögzített résztvevői hang- és videófelvételeket szeretnének egyetlen produkcióvá szerkeszteni.
-- **Mérhető sikerkritériumok:** A felhasználó projektet hozhat létre és menthet; legalább egy hang- és egy videóforrást hozzáadhat; a forrásokat szinkronizálhatja; kivágásokat, hangsáv-választást, hangerőt és pan–zoom beállítást adhat meg; előnézetet nézhet; videó- és csak hangot tartalmazó kimenetet készíthet; a projekt újranyitásakor a szerkesztési állapot helyreáll.
-- **Technikai irány:** TypeScript-alapú asztali kliens, tervezetten Electron és React használatával; előnézethez HTML médiaelemek és Web Audio API; helyi rendereléshez FFmpeg; tartós projektadatokhoz SQLite vagy más indokolt helyi tárolási megoldás.
-- **Korlátok:** Az előnézet és a renderelés a kliens eszközén történik. A szerver — ha szükséges a fiókokhoz — nem dolgozza fel a hang- és videóanyagot. A titkok, tokenek és személyes vagy éles adatok nem kerülhetnek a Git-repozitóriumba.
+- **Elsődleges cél:** Több hang- és videóforrásból egyetlen, szerkesztett podcast készítése.
+- **Célfelhasználók:** Podcastkészítők, akik a résztvevőkről külön felvételeket készítenek.
+- **Sikerkritérium:** A felhasználó forrásokat tud hozzáadni, szinkronizálni, kivágásokat és hangsávokat állítani, előnézetet nézni, majd videót vagy csak hangot exportálni.
+- **Fejlesztőkörnyezet:** Tervezetten Electron, React és TypeScript; a médiafeldolgozás lehetséges eszköze az FFmpeg.
+- **Adattárolás:** A projekt és a szerkesztési beállítások később is visszaállíthatók legyenek.
 
 ## Hatókör
 
 ### Benne van a hatókörben
 
-- Felhasználói fiókok és projektek kezelése.
-- Hang- és videóforrások hozzáadása, metaadataik kezelése és résztvevőkhöz rendelése.
-- Kézi szinkronizáció közös időbeli nullponthoz.
-- Idővonalon megadott kivágások és szakaszonkénti hang-/videósáv-választás.
-- Több hangsáv keverése és sávonkénti hangerőállítás.
-- Videósávonkénti alapértelmezett pan–zoom beállítás és idővonalas felülírás.
-- Előnézet, helyi videó-renderelés és csak hangot tartalmazó export.
-- Projekt- és szerkesztési adatok tartós tárolása, validáció és hibakezelés.
-- Git-alapú verziókezelés és tesztelés.
+- Projekt létrehozása, mentése és újranyitása.
+- Hang- és videófájlok hozzáadása, résztvevőkhöz rendelése.
+- Források kézi szinkronizálása közös idővonalra.
+- Nem kívánt részek kivágása.
+- Annak beállítása, hogy egy-egy szakaszban mely hang- és videósávok aktívak.
+- Hangerő állítása és több hangsáv keverése.
+- Videósávok alapértelmezett pan–zoom beállítása, valamint ennek idővonalas felülírása.
+- Előnézet és helyi export.
 
-### Nincs benne a hatókörben az első változatban
+### Nincs benne a hatókörben
 
-- Általános célú, professzionális videó-utómunka.
-- Intro/outro készítése és összetett vizuális effektek.
-- Professzionális színkorrekció.
-- Automatikus feliratgenerálás és automatikus arckövetés.
-- Automatikus, hangjel alapján történő szinkronizáció.
-- Több videó egyidejű megjelenítése előre definiált elrendezésekben; ez opcionális bővítés.
+- Automatikus hangalapú szinkronizálás.
+- Automatikus feliratgenerálás és arckövetés.
+- Komplex vizuális effektek és professzionális színkorrekció.
+- Felhőben futó videó-renderelés.
 
 ## Jegyzetek
 
-Az első megvalósítás a kötelező szerkesztési folyamatra koncentrál: források kezelése, kézi szinkronizáció, idővonal, hangkeverés, pan–zoom, előnézet és helyi export. A médiafeldolgozási technológiákat prototípussal kell ellenőrizni, különös tekintettel a kodektámogatásra, a hosszú fájlok memóriaigényére és az előnézet, illetve az export eredményének egyezésére.
+Elsőként az alapvető szerkesztési folyamatot kell megvalósítani. A támogatott formátumokat és a nagyobb fájlok kezelését a kiválasztott technológiákkal végzett tesztek alapján lehet pontosítani. Fontos, hogy a projekt újranyitásakor a vágások, a szinkroneltolások és a sávbeállítások is megmaradjanak.
 
-A pontosan támogatott formátumokat és a teljesítményhatárokat tesztelés után kell rögzíteni; mérés nélkül nem vállalunk konkrét maximális fájlméretet vagy garantált renderelési sebességet.
+A médiafeldolgozás és az export a felhasználó gépén történik. A végleges technológiai döntést a specifikációban összehasonlított lehetőségek és egy egyszerű prototípus alapján kell meghozni.
